@@ -1,0 +1,32 @@
+{
+  "name": "test-frontend-meli",
+  "version": "1.0.0",
+  "description": "Mercado Libre Front-end Test",
+  "main": "index.js",
+  "dependencies": {
+    "chico": "^2.0.9",
+    "jquery": "^3.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.17.5",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-concat": "^2.6.0",
+    "gulp-html-minifier": "^0.1.8",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
+  },
+   "scripts": {
+    "test": "test.js"
+  },
+  "keywords": [
+    "Mercado",
+    "Libre",
+    "Front-end",
+    "Test"
+  ],
+  "author": "Sebastian Pelella",
+  "license": "ISC"
+}
