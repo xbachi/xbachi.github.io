@@ -1,0 +1,205 @@
+/* 
+VARIABLES
+*/
+
+$marginTop: 15px;
+$paddingBase: 10px;
+$tabsContentZindex: 1;
+
+/* 
+Main layout
+*/
+
+
+.page-wrapper{
+    box-sizing: border-box;
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: $paddingBase;
+    width:100%;
+
+    header {
+        text-align: left;
+
+        h1 {
+            font-size: 3.5em;
+            text-transform:capitalize;
+            letter-spacing: -1px;
+            line-height: 1em;
+            margin-bottom: 5px;
+        }
+    }
+
+    .product-offer {
+        margin-top: $marginTop;
+
+        .product-image {
+            .img-product {
+                width: 100%;
+                max-width: 600px;
+                height: auto;               
+            }
+        }
+
+        .product-info {            
+            padding: $marginTop 40px 0 40px;
+
+            legend {
+                display: none;
+            }
+
+            .price{
+                font-size: 2.8em;
+                letter-spacing: -1px;
+                padding-bottom: 5px;
+                vertical-align: top;
+                color: #900;
+            }
+
+            fieldset {
+                padding: 5px 0;
+
+                .ch-btn {
+                    margin-top: $marginTop;
+                    padding: $paddingBase $paddingBase * 2;
+                }
+            }
+
+            .ch-form-row {
+                height: 20px;
+
+                label {
+                    width: 80px;
+                    text-align: left;
+                }
+            }
+
+            .info {
+                color: #666;
+            }            
+        }
+    }
+
+    .line-separator {
+        height: 1px;
+        background: #ddd;
+        margin: 25px 0 5px;
+    }
+
+    .carousel-wrapper {
+        margin-top: $marginTop;
+        padding: $paddingBase 0;
+
+        h2 {
+            font-size: 2.3em;
+            line-height: 1;
+        }
+
+        .ch-carousel {
+            overflow: hidden;
+            padding: $paddingBase;
+
+            img {
+                margin-top: $marginTop;
+                max-width: 150px;
+                border: 1px solid #ddd;
+            }
+
+            .ch-carousel-pages {
+                display: none;
+            }
+        }
+    }
+
+    .tabs-info{
+        .tabs {
+            position: relative;   
+            min-height: 240px;
+            clear: both;
+            margin: 38px 0;
+        }
+        .tab {
+            float: left;
+
+            label {
+                background: #eee; 
+                padding: $paddingBase; 
+                border: 1px solid #ccc; 
+                position: relative;
+                cursor: pointer;
+                top: 2px;
+          }
+
+            input[type=radio]{
+                display: none;   
+            }
+        }
+        .content {
+            position: absolute;
+            top: 28px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: $paddingBase * 2;
+            opacity: 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            transition: opacity linear 0.1s;        
+
+            h3 {
+                &.ok{
+                    color:#468847;
+                }
+                &.info{
+                    color:#3a87ad;
+                }
+            }
+        }
+
+        input[type=radio]{
+            &:checked ~ label{
+                background: #fff;
+                border-bottom: 1px solid #fff;
+                z-index: $tabsContentZindex + 1;
+                cursor: default;
+            }
+
+            &:checked ~ label ~ .content{
+                z-index: $tabsContentZindex;
+                -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+                filter: alpha(opacity=100);
+                opacity: 1;                
+                transition: opacity ease-out 0.2s 0.1s;             
+            }
+        }
+    }
+
+}
+
+
+@media only screen and (max-width: 530px) {
+    .page-wrapper {
+        .carousel-wrapper {
+            .ch-carousel img {
+                max-width: 100%;            
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .page-wrapper {
+        header h1 {
+            font-size: 3em;
+            text-align: center;
+        }
+        .product-offer  {
+            text-align: center;
+        }
+        .carousel-wrapper {
+            text-align: center;
+        }
+    }
+}
