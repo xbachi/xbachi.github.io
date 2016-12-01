@@ -50,7 +50,7 @@ gulp.task('images', function() {
 });
 
 
-gulp.task('serve', ['html', 'styles', 'scripts'], function() {
+gulp.task('build', ['html', 'styles', 'scripts'], function() {
 
     browserSync.init({
         server: "./dist"
@@ -61,4 +61,4 @@ gulp.task('serve', ['html', 'styles', 'scripts'], function() {
     gulp.watch('js/**/*.js', ['scripts'], browserSync.reload); 
 });
 
-gulp.task('default', ['serve']);
+gulp.task('default', ['build']);
